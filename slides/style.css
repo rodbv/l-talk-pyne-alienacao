@@ -20,6 +20,19 @@
   margin-top: 0;
 }
 
+/* The theme colours links. On a black and white deck they stay black and
+   read as clickable through the underline alone. */
+.slidev-layout a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.slidev-layout a:hover {
+  text-decoration-thickness: 2px;
+}
+
 /* ------------------------------------------------------------------ */
 /* 1 - a pergunta                                                      */
 /* ------------------------------------------------------------------ */
@@ -147,9 +160,10 @@
   margin: 0 0 2rem;
 }
 
+/* No border here: the link underline below is the only rule, otherwise
+   the two sit a few pixels apart and read as a double line. */
 .g-repo .skills {
-  border-top: 2px solid var(--ink);
-  padding-top: 1.2rem;
+  padding-top: 0.4rem;
 }
 
 .g-repo .skills h3 {
@@ -247,8 +261,6 @@
 .g-qr .repo-url {
   font-family: var(--slidev-code-font-family, ui-monospace, monospace);
   font-size: 1.5rem;
-  border-top: 2px solid var(--ink);
-  padding-top: 1.2rem;
-  margin-top: 1.6rem;
+  margin-top: 1.8rem;
   word-break: break-all;
 }

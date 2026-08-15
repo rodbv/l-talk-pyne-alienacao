@@ -75,7 +75,7 @@ o que ela achava que sabia, e não sabia.
 
 <div class="skills">
 
-### github.com/rodbv/socratic-skills
+### <a href="https://github.com/rodbv/socratic-skills/blob/main/README.pt-br.md" target="_blank" rel="noopener">github.com/rodbv/socratic-skills</a>
 
 - **quiz-me** pergunta sobre o seu diff antes do commit
 - **guide-me** te guia na implementação, sem escrever o código
@@ -138,6 +138,6 @@ O que você entendeu e aprendeu fica com você.
 
 </div>
 
-<div class="repo-url">github.com/rodbv/socratic-skills</div>
+<div class="repo-url"><a href="https://github.com/rodbv/socratic-skills/blob/main/README.pt-br.md" target="_blank" rel="noopener">github.com/rodbv/socratic-skills</a></div>
 
 </div>
