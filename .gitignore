@@ -1,0 +1,20 @@
+# Node / Slidev
+node_modules/
+slides/node_modules/
+slides/.slidev/
+slides/dist/
+slides/.output/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env / secrets
+.env

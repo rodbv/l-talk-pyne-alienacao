@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Russo+One&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+:root {
+  --red: #a4161a;
+  --red-deep: #6a040f;
+  --paper: #f4efe7;
+  --ink: #171212;
+
+  /* Headline face. Swap this one line to change the poster look:
+     Anton         - ultra-condensed, Rodchenko propaganda poster
+     Archivo Black - wide and blocky, heavier brutalist slab of text
+     Russo One     - squared geometric, Soviet technical / space-era */
+  --font-display: "Anton", "Archivo Black", Impact, sans-serif;
+
+  --font-serif: "PT Serif", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+.slidev-layout {
+  font-family: var(--font-sans);
+  padding: 3rem 3.5rem;
+}
+
+/* Constructivist posters get their force from heavy condensed caps set
+   large with tight tracking, so the font alone is not enough. */
+.slidev-layout h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.slidev-layout h2,
+.slidev-layout h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+.slidev-layout code {
+  font-family: var(--font-mono);
+}
+
+/* The seriph theme dims any <p> right after an <h1> to 50% opacity,
+   treating it as a subtitle. Here that paragraph is the actual content,
+   so undo it. The doubled class outranks the theme without !important. */
+.slidev-layout.slidev-layout h1 + p {
+  opacity: 1;
+  margin-top: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Slide 1 - espera, sem spoiler                                       */
+/* ------------------------------------------------------------------ */
+
+/* Charcoal rather than pure black: on a projector, pure black is hard
+   to tell apart from no signal at all. */
+.slidev-layout.s-blank {
+  background: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-blank .sinal {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ------------------------------------------------------------------ */
+/* Slide 3 - O sapateiro                                               */
+/* ------------------------------------------------------------------ */
+
+/* Named grid areas rather than nested divs, so the markdown above stays
+   flat and each block is its own top-level element. */
+.slidev-layout.s-sapateiro {
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "titulo titulo"
+    "antes  depois"
+    "punch  punch";
+  grid-template-rows: auto 1fr auto;
+  column-gap: 2.5rem;
+  row-gap: 1.4rem;
+}
+
+/* Longer than the other headlines, so it is sized down to sit on two
+   lines at most across the full slide width. */
+.s-sapateiro h1 {
+  grid-area: titulo;
+  font-size: 3rem;
+  line-height: 1.05;
+  color: var(--red-deep);
+  margin: 0;
+}
+
+.s-sapateiro .antes {
+  grid-area: antes;
+  border-left: 5px solid rgba(23, 18, 18, 0.25);
+  padding-left: 1.4rem;
+}
+
+.s-sapateiro .depois {
+  grid-area: depois;
+  border-left: 5px solid var(--red);
+  padding-left: 1.4rem;
+}
+
+.s-sapateiro .antes p,
+.s-sapateiro .depois p {
+  font-size: 1.55rem;
+  line-height: 1.45;
+  margin: 0 0 0.9rem;
+}
+
+/* The "Antes" / "Depois" labels are the first bold line of each column. */
+.s-sapateiro .antes p:first-child,
+.s-sapateiro .depois p:first-child {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.25rem;
+  margin-bottom: 1.1rem;
+}
+
+.s-sapateiro .antes p:first-child strong,
+.s-sapateiro .depois p:first-child strong {
+  font-weight: 400;
+}
+
+.s-sapateiro .antes p:first-child {
+  color: rgba(23, 18, 18, 0.55);
+}
+
+.s-sapateiro .depois p:first-child {
+  color: var(--red);
+}
+
+.s-sapateiro .punch {
+  grid-area: punch;
+  border-top: 3px solid var(--red);
+  padding-top: 1.1rem;
+}
+
+.s-sapateiro .punch p {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  line-height: 1.3;
+  margin: 0 0 0.8rem;
+  color: var(--ink);
+}
+
+/* The last line is the question aimed at the audience, so it carries
+   the colour and the others stay neutral. */
+.s-sapateiro .punch p:last-child {
+  margin-bottom: 0;
+  color: var(--red-deep);
+}
+
+.s-sapateiro .punch strong {
+  color: var(--red-deep);
+}
+
+/* ------------------------------------------------------------------ */
+/* Slide 2 - Alienação                                                 */
+/* ------------------------------------------------------------------ */
+
+.slidev-layout.s-alienacao {
+  background: var(--red);
+  color: #fff;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.s-alienacao .col-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 1rem 3rem 4rem;
+  z-index: 1;
+}
+
+.s-alienacao h1 {
+  font-size: 6.5rem;
+  line-height: 1;
+  margin: 0 0 2.5rem;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.s-alienacao p {
+  font-size: 2rem;
+  line-height: 1.45;
+  max-width: 22ch;
+  color: #fff;
+  margin: 0;
+}
+
+.s-alienacao strong {
+  color: #fff;
+  font-weight: 700;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.85);
+}
+
+.s-alienacao .fonte {
+  margin-top: 2.75rem;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.s-alienacao .col-foto {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grayscale portrait multiplied over the flat red becomes a duotone,
+   and the mask fades its left edge into the background. */
+.s-alienacao .col-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+  filter: grayscale(1) brightness(1.18) contrast(1.05);
+  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+}
+
+/* ------------------------------------------------------------------ */
+/* Slide 4 - Subversão / socratic-skills                               */
+/* ------------------------------------------------------------------ */
+
+.slidev-layout.s-socratic {
+  background: var(--red-deep);
+  color: #fff;
+  position: relative;
+}
+
+/* The screenshot sits in its own absolutely positioned column so the
+   markdown above it stays flat, with no nested divs to balance. */
+.s-socratic .shot {
+  position: absolute;
+  right: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34%;
+}
+
+.s-socratic .shot img {
+  width: 100%;
+  max-height: 33rem;
+  object-fit: contain;
+  object-position: top;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.4);
+}
+
+/* Text keeps clear of the screenshot column. */
+.s-socratic h1,
+.s-socratic .lead,
+.s-socratic .claim,
+.s-socratic .repo {
+  max-width: 60%;
+}
+
+/* The claim of the slide. Plain text, but white and heavier than the
+   lead above it, so it reads as the point rather than as more setup. */
+.s-socratic .claim p {
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0 0 1.8rem;
+}
+
+.s-socratic h1 {
+  font-size: 3.4rem;
+  color: #fff;
+  margin: 0 0 1.6rem;
+}
+
+.s-socratic .lead p {
+  font-size: 1.7rem;
+  line-height: 1.45;
+  max-width: 48ch;
+  color: #ffdedc;
+  margin: 0 0 2rem;
+}
+
+.s-socratic .repo {
+  border-top: 3px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  padding: 1.2rem 0;
+  margin-bottom: 1.6rem;
+}
+
+.s-socratic .repo h3 {
+  font-family: var(--font-mono);
+  font-size: 1.9rem;
+  color: #fff;
+  margin: 0 0 0.9rem;
+}
+
+.s-socratic .repo ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.s-socratic .repo li {
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: #ffdedc;
+}
+
+.s-socratic .repo strong {
+  font-family: var(--font-mono);
+  color: #fff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Slide 4 - exemplo do quiz-me                                        */
+/* ------------------------------------------------------------------ */
+
+.slidev-layout.s-exemplo {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.s-exemplo h1 {
+  font-size: 2.5rem;
+  color: var(--red-deep);
+  margin: 0 0 0.9rem;
+}
+
+.s-exemplo .terminal {
+  background: #1c1416;
+  border-radius: 8px;
+  padding: 1.1rem 1.5rem;
+  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.22);
+}
+
+/* Each voice is its own div rather than one <pre>, because a blank line
+   inside an HTML block ends that block in markdown and orphans the tag.
+   Sized large on purpose: the projector at this venue is poor. */
+.s-exemplo .terminal > div {
+  font-family: var(--font-mono);
+  font-size: 1.32rem;
+  line-height: 1.45;
+  margin-bottom: 0.85rem;
+}
+
+.s-exemplo .terminal > div:last-child {
+  margin-bottom: 0;
+}
+
+/* Three voices, three colors: the skill asking, you answering, the
+   skill responding. The reader should tell them apart without a legend. */
+.s-exemplo .terminal .q {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.s-exemplo .terminal .a {
+  color: #ff9f9c;
+}
+
+.s-exemplo .terminal .c {
+  color: #cfc4c4;
+}
+
+/* ------------------------------------------------------------------ */
+/* Slide 5 - QR final                                                  */
+/* ------------------------------------------------------------------ */
+
+.slidev-layout.s-qr {
+  background: var(--red);
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  padding: 3rem 4rem;
+}
+
+/* The QR needs a white quiet zone around it or phone cameras struggle
+   to lock onto it against the red. */
+.s-qr .qr-card {
+  background: #fff;
+  padding: 1.4rem;
+  border-radius: 10px;
+  line-height: 0;
+}
+
+.s-qr .qr-card img {
+  width: 340px;
+  height: 340px;
+  display: block;
+}
+
+.s-qr h1 {
+  font-size: 4.4rem;
+  color: #fff;
+  margin: 0 0 1.4rem;
+}
+
+.s-qr .repo-url {
+  font-family: var(--font-mono);
+  font-size: 1.45rem;
+  color: #fff;
+  padding-bottom: 1.4rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.35);
+  word-break: break-all;
+}
+
+.s-qr .fecho p {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  line-height: 1.35;
+  color: #ffeceb;
+  max-width: 30ch;
+  margin: 0;
+}
