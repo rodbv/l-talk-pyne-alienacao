@@ -10,13 +10,6 @@ mdc: true
 canvasWidth: 1280
 aspectRatio: 16/9
 layout: default
-class: g-blank
----
-
-<div class="sinal"></div>
-
----
-layout: default
 class: g-hook
 ---
 
@@ -140,12 +133,8 @@ class: g-qr
 
 <div class="fecho">
 
-A IA te economizou quatro horas.
-Devolver uma delas para entender o que você entregou
-ainda te deixa três.
-
 O código fica com a empresa.
-O que você entendeu fica com você.
+O que você entendeu e aprendeu fica com você.
 
 </div>
 
