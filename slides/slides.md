@@ -20,7 +20,7 @@ layout: default
 class: g-sapateiro
 ---
 
-# O sapateiro
+# Sempre vai haver sapato, mas e o sapateiro?
 
 <div class="antes">
 
