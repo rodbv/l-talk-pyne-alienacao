@@ -37,12 +37,12 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* 2 - o relojoeiro                                                    */
+/* 2 - o sapateiro                                                    */
 /* ------------------------------------------------------------------ */
 
 /* Named grid areas rather than nested divs, so every block in the
    markdown stays a flat top-level element. */
-.slidev-layout.g-relojoeiro {
+.slidev-layout.g-sapateiro {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -55,70 +55,70 @@
   position: relative;
 }
 
-.g-relojoeiro h1 {
+.g-sapateiro h1 {
   grid-area: titulo;
   margin: 0;
 }
 
-.g-relojoeiro .antes {
+.g-sapateiro .antes {
   grid-area: antes;
   border-left: 4px solid var(--rule);
   padding-left: 1.3rem;
 }
 
-.g-relojoeiro .depois {
+.g-sapateiro .depois {
   grid-area: depois;
   border-left: 4px solid var(--ink);
   padding-left: 1.3rem;
 }
 
-.g-relojoeiro .antes p,
-.g-relojoeiro .depois p {
+.g-sapateiro .antes p,
+.g-sapateiro .depois p {
   font-size: 1.5rem;
   line-height: 1.45;
   margin: 0 0 0.9rem;
 }
 
-.g-relojoeiro .antes p:first-child,
-.g-relojoeiro .depois p:first-child {
+.g-sapateiro .antes p:first-child,
+.g-sapateiro .depois p:first-child {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 1.05rem;
   margin-bottom: 1rem;
 }
 
-.g-relojoeiro .antes p:first-child {
+.g-sapateiro .antes p:first-child {
   color: #777777;
 }
 
-.g-relojoeiro .punch {
+.g-sapateiro .punch {
   grid-area: punch;
   border-top: 2px solid var(--ink);
   padding-top: 1.1rem;
   padding-right: 11rem;
 }
 
-.g-relojoeiro .punch p {
+.g-sapateiro .punch p {
   font-size: 1.5rem;
   line-height: 1.35;
   margin: 0 0 0.7rem;
 }
 
-.g-relojoeiro .punch p:last-child {
+.g-sapateiro .punch p:last-child {
   margin-bottom: 0;
   font-weight: 700;
 }
 
 /* Small, in the corner: it illustrates the attribution in the punch
    text rather than carrying the slide. */
-.g-relojoeiro .marx {
+.g-sapateiro .marx {
   position: absolute;
   right: 3.5rem;
   bottom: 3rem;
   width: 9rem;
 }
 
-.g-relojoeiro .marx img {
+.g-sapateiro .marx img {
   width: 100%;
   display: block;
   filter: grayscale(1) contrast(1.05);

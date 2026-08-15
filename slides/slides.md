@@ -17,19 +17,19 @@ class: g-hook
 
 ---
 layout: default
-class: g-relojoeiro
+class: g-sapateiro
 ---
 
-# O relojoeiro
+# O sapateiro
 
 <div class="antes">
 
 **Antes**
 
-Em Nuremberg, um artesão fazia o relógio inteiro:
-a mola, o mostrador, os ponteiros, a caixa.
+Um artesão fazia o sapato inteiro: escolhia o couro,
+tirava as medidas no pé do cliente, cortava, costurava.
 
-Ele sabia fazer um relógio.
+Ele sabia fazer um sapato.
 
 </div>
 
@@ -37,11 +37,11 @@ Ele sabia fazer um relógio.
 
 **Depois**
 
-Uma pessoa faz só a mola. Outra só o mostrador.
-Outra só os ponteiros.
+Uma pessoa corta o couro. Outra costura.
+Outra cola a sola.
 
-Ninguém sabe fazer um relógio,
-nem como um relógio funciona.
+Ninguém sabe fazer um sapato,
+nem por que um dura e o outro não.
 
 </div>
 
