@@ -1,57 +1,42 @@
 ---
-theme: seriph
+theme: default
 colorSchema: light
-title: Alienação
+title: A quem interessa tanto vibe coding?
 info: |
-  Lightning talk na Python Nordeste sobre o conceito de alienação em
-  Karl Marx e a pressão para que pessoas desenvolvedoras usem IA.
+  Lightning talk na Python Nordeste sobre alienação, desqualificação
+  e o uso de IA para continuar aprendendo.
 transition: fade
 mdc: true
 canvasWidth: 1280
 aspectRatio: 16/9
 layout: default
-class: s-blank
+class: g-blank
 ---
 
 <div class="sinal"></div>
 
 ---
 layout: default
-class: s-alienacao
+class: g-hook
 ---
 
-<div class="col-text">
-
-# Alienação
-
-Para Marx, quem trabalha **no capitalismo** perde o controle
-sobre **o que** produz,
-sobre **como** produz,
-e sobre **si mesmo** como criador.
-
-<div class="fonte">Karl Marx, Manuscritos Econômico-Filosóficos, 1844</div>
-
-</div>
-
-<div class="col-foto">
-  <img src="/marx.jpg" alt="Retrato de Karl Marx" />
-</div>
+# A quem interessa tanto vibe coding?
 
 ---
 layout: default
-class: s-sapateiro
+class: g-relojoeiro
 ---
 
-# Sapatos sempre vão existir, mas e o sapateiro?
+# O relojoeiro
 
 <div class="antes">
 
 **Antes**
 
-Escolhia o couro. Tirava as medidas no pé do cliente.
-Cortava, costurava, entregava na mão.
+Em Nuremberg, um artesão fazia o relógio inteiro:
+a mola, o mostrador, os ponteiros, a caixa.
 
-Cada sapato era único, e era dele.
+Ele sabia fazer um relógio.
 
 </div>
 
@@ -59,86 +44,111 @@ Cada sapato era único, e era dele.
 
 **Depois**
 
-Cola a sola. Doze horas por dia.
+Uma pessoa faz só a mola. Outra só o mostrador.
+Outra só os ponteiros.
 
-Nunca vê o pé de quem vai calçar.
+Ninguém sabe fazer um relógio,
+nem como um relógio funciona.
 
 </div>
 
 <div class="punch">
 
-E você, revisando o diff que a máquina escreveu:
-**escolhe o couro, ou cola a sola?**
+O conhecimento do todo saiu do trabalhador e virou propriedade de quem
+organiza a linha. Marx chama isso de **trabalhador parcial**.
 
+Você entrega o código, o notebook, a análise.
+Sabe explicar por que aquilo funciona?
+
+</div>
+
+<div class="marx">
+  <img src="/marx.jpg" alt="Karl Marx" />
 </div>
 
 ---
 layout: default
-class: s-socratic
+class: g-repo
 ---
 
-# Não entregue e siga em frente
+# Método socrático
 
-<div class="lead">
+<div class="metodo">
 
-Uma tarefa de 6 horas levou 2.
-As 4 horas que sobraram não pertencem ao próximo card.
-
-</div>
-
-<div class="claim">
-
-Dev indispensável é quem ainda aprende, pensa e cria.
+Sócrates não dava respostas. Ele perguntava até a pessoa descobrir
+o que ela achava que sabia, e não sabia.
 
 </div>
 
-<div class="repo">
+<div class="skills">
 
 ### github.com/rodbv/socratic-skills
 
+- **quiz-me** pergunta sobre o seu diff antes do commit
+- **guide-me** te guia na implementação, sem escrever o código
+
 </div>
 
-<div class="shot">
-  <img src="/Screenshot_20260814_184740.png" alt="Repositório socratic-skills no GitHub" />
+<div class="socrates">
+  <img src="/socrates.svg" alt="Sócrates" />
 </div>
 
 ---
 layout: default
-class: s-exemplo
+class: g-exemplo
 ---
 
-# Como é na prática
+# quiz-me
 
 <div class="terminal" v-pre>
-<div class="q">Pergunta 2 de 6:<br>Na linha 13 você adicionou select_related('author').<br>Sem ela, os dados apareceriam diferentes na tela?</div>
-<div class="a">&gt; sim, o autor não viria junto</div>
-<div class="c">Se fosse assim, o que o template renderizaria<br>em {{ post.author.name }}? Sua resposta se sustenta?</div>
-<div class="a">&gt; não... o Django ia buscar o autor de qualquer jeito.<br>&nbsp;&nbsp;a tela só ia ficar lenta</div>
-<div class="c">"Lenta" como? Seja específico.</div>
-<div class="a">&gt; o autor ia ser buscado na hora</div>
-<div class="c">Sim, e além disso seriam 51 consultas em vez de 1: uma pra<br>listar os posts e mais uma por post. Isso é o N+1.<br>Vale estudar isso antes do próximo PR.</div>
+<div class="skill">Pergunta 2 de 6:<br>Por que você usou F('estoque') - 1 em vez de ler o objeto,<br>subtrair em Python e salvar?</div>
+<div class="voce">&gt; porque o F monta a expressão no SQL, a subtração<br>&nbsp;&nbsp;acontece no banco e não no Python</div>
+<div class="skill">Você descreveu o QUE ele faz, não POR QUE ele é necessário<br>aqui. Se dois pedidos do mesmo produto chegarem no mesmo<br>instante, o que acontece na versão que subtrai em Python?</div>
+<div class="voce">&gt; os dois leem estoque = 5, os dois salvam 4.<br>&nbsp;&nbsp;eu perdi uma baixa</div>
+<div class="skill">Esse é o motivo. O banco decrementa em cima do valor atual,<br>não do que você leu cinco linhas antes.</div>
 </div>
 
 ---
 layout: default
-class: s-qr
+class: g-exemplo
+---
+
+# guide-me
+
+<div class="terminal" v-pre>
+<div class="skill">Passo 2 de 5: o repositório precisa expor get_by_id(id) e<br>devolver None quando não encontrar. Escreve o teste primeiro.</div>
+<div class="voce">&gt; pronto, mas eu não sei como checar isso no teste</div>
+<div class="skill">O que o método promete quando não encontra nada?<br>Essa promessa é a sua asserção.</div>
+<div class="voce">&gt; ah, então um teste com um id que existe e outro<br>&nbsp;&nbsp;com um id que não existe</div>
+<div class="skill">Isso. Me avisa quando terminar.</div>
+<div class="voce">&gt; terminei</div>
+<div class="skill">Li o diff. Os dois casos estão cobertos. E quando o id existe<br>mas o registro foi marcado como deletado?</div>
+</div>
+
+---
+layout: default
+class: g-qr
 ---
 
 <div class="qr-card">
-  <img src="/qrcode_github.com.png" alt="QR code para github.com/rodbv/socratic-skills" />
+  <img src="/qrcode_github.com.png" alt="QR para github.com/rodbv/socratic-skills" />
 </div>
 
 <div class="qr-side">
 
 # Obrigado
 
-<div class="repo-url">github.com/rodbv/socratic-skills</div>
-
 <div class="fecho">
 
-Economizou 4 horas, gastou 1 aprendendo.
-Você saiu no lucro, e dessa vez o lucro é seu.
+A IA te economizou quatro horas.
+Devolver uma delas para entender o que você entregou
+ainda te deixa três.
+
+O código fica com a empresa.
+O que você entendeu fica com você.
 
 </div>
+
+<div class="repo-url">github.com/rodbv/socratic-skills</div>
 
 </div>
